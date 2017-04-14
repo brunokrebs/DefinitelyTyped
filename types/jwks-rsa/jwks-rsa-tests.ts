@@ -1,4 +1,4 @@
-import * as JwksRsa from 'node-jwks-rsa';
+import * as JwksRsa from 'jwks-rsa';
 import ms = require('ms');
 
 //

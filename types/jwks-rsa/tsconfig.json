@@ -17,6 +17,6 @@
     },
     "files": [
         "index.d.ts",
-        "node-jwks-rsa-tests.ts"
+        "jwks-rsa-tests.ts"
     ]
 }

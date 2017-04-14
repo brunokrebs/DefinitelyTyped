@@ -1,9 +1,9 @@
-// Type definitions for node-jwks-rsa
-// Project: https://github.com/auth0/node-jwks-rsa
+// Type definitions for jwks-rsa
+// Project: https://github.com/auth0/jwks-rsa
 // Definitions by: Bruno Krebs <https://github.com/brunokrebs/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare module 'node-jwks-rsa' {
+declare module 'jwks-rsa' {
 
     function JwksRsa(options: JwksRsa.Options): JwksRsa.JwksClient;
 
