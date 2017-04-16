@@ -1,13 +1,14 @@
 import koa = require('koa');
-import jwt = require('koa-jwt');
+import * as KoaJwt from 'koa-jwt';
 
 const app = new koa();
 
-app.use(jwt({
-    secret: 'some-secret-key'
-}));
+const options: KoaJwt.Options = {
+  secret: 'some-secret-key'
+}
 
-app.use(jwt({
-    secret: 'some-secret-key',
-    key: 'auth'
-}));
+app.use(KoaJwt.jwt(options));
+
+options.key = 'auth';
+
+app.use(KoaJwt.jwt(options));

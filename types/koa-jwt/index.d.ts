@@ -1,21 +1,27 @@
-// Type definitions for koa-jwt 2.1
+// Type definitions for koa-jwt 3.2
 // Project: https://github.com/koajs/jwt
 // Definitions by: Bruno Krebs <https://github.com/brunokrebs/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-import Koa = require("koa");
+declare module "koa-jwt" {
+    import Koa = require("koa");
+    import * as JwksRsa from "jwks-rsa";
 
-export = jwt;
+    function KoaJwt(options: KoaJwt.Options): Koa.Middleware;
 
-declare function jwt(options: jwt.Options): Koa.Middleware;
+    namespace KoaJwt {
+        interface Options {
+            secret: string | Buffer | JwksRsa.JwksClient;
+            key?: string;
+            getToken?(opts: Options): string;
+            passthrough?: boolean;
+            cookie?: string;
+            audience?: string;
+            issuer?: string;
+            debug?: boolean;
+        }
 
-declare namespace jwt {
-    interface Options {
-        secret: string | Buffer;
-        key?: string;
-        getToken?(opts: jwt.Options): string;
-        passthrough?: boolean;
-        cookie?: string;
-        debug?: boolean;
     }
+
+    export = KoaJwt;
 }
